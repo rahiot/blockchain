@@ -1,0 +1,53 @@
+http://localhost:3000/transaction
+{
+	"amount": 50,
+	"sender": "0A9NS09FBA883HF",
+	"recipient": "AADF39JFN230FFG",
+
+}
+
+
+
+http://localhost:3001/register-node   //to register a node on 3002 with current node on 3001
+{
+    "newNodeUrl":"http://localhost:3002"
+}
+
+
+
+
+http://localhost:3001/register-nodes-bulk  //Inside of this array, there are going to be the URLs of all                                                                                 of the nodes that are already present in our blockchain network:
+{
+    "allNetworkNodes": [
+    "http://localhost:3002",
+    "http://localhost:3003",
+    "http://localhost:3004"
+    ]
+}
+
+
+
+
+
+
+
+localhost:3001/register-and-broadcast-node	//For this first test, we want to register                   					our second node hosted on port 3002 with 					our first node on 3001. To do that, we will add the 					following highlighted code:
+{
+    "newNodeUrl": "http://localhost:3002" ///and add all the 3003,3004 ect 
+}
+
+
+
+http://localhost:3001/transaction/broadcast
+{
+	"amount": 580,
+	"sender": "0A9NS09FBA883HF",
+	"recipient": "AADF39JFN230FFG",
+
+}
+
+
+//on web browser
+http://localhost:3001/consensus 
+http://localhost:3001/mine
+http://localhost:3001/blockchain
